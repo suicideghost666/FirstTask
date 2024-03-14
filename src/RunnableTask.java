@@ -15,7 +15,6 @@ public class RunnableTask implements Runnable {
                 }
             }
         }
-        time = System.currentTimeMillis();
     }
     private boolean isNeighbours(String str) {
         for (int j = 1; j < str.length()-1; j++) {
@@ -29,7 +28,6 @@ public class RunnableTask implements Runnable {
     long rightBound;
     static int countEven;
     static int countOdd;
-    static long time;
     public RunnableTask(long leftBound, long rightBound) {
         this.leftBound = leftBound;
         this.rightBound = rightBound;
@@ -42,10 +40,6 @@ public class RunnableTask implements Runnable {
         System.err.println("Runnable:");
         System.err.println("Чётных: "+countEven +
                 " \nНечётных: "+countOdd);
-        System.err.println();
-    }
-    void getDifferenceBetweenTime(long start) {
-        System.err.print("Время выполнения программы:"+ (time-start) + "ms");
         System.err.println();
     }
 }
